@@ -1,45 +1,47 @@
+set nu
+set encoding=UTF-8
 set relativenumber
 set ic
-set hl
-"Usar o comando find para usar localização de arquivos
-"e usa tab para autocompletar
-set path+=**
-set wildmenu
-
-
+set nobackup
+set showmatch
 set tabstop=4
+set softtabstop=4
+set smartindent
+set hlsearch
+set incsearch
 set expandtab
+set noswapfile
 
-filetype plugin on 
+set path=** "using :find to search files
+set scrolloff=999
+set t_Co=256
+set showcmd
+filetype indent on
 set omnifunc=syntaxcomplete#Complete
-
 syntax on
+set cursorline
+set wildmenu
+set wildmode=longest:list,full
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
+    Plug 'ap/vim-css-color'
+    Plug 'tpope/vim-surround'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'mattn/emmet-vim'
+    Plug 'tomtom/tcomment_vim' "usa o comando gcc
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'itchyny/lightline.vim'
 
-Plug 'sainnhe/vim-color-forest-night'
-Plug 'yggdroot/indentline'
-Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'ap/vim-css-color'
 call plug#end()
 
+set background=dark
+colorscheme gruvbox-material
+set laststatus=2
 
-"airline configuração
-"config colorscheme
-
-set termguicolors
-
-let g:forest_night_enable_italic = 1
-let g:forest_night_disable_italic_comment = 1
-
-colorscheme forest-night
-
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-"identação
-let g:indentLine_setColors = 0
-let g:indentLine_char = '¦'
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+"" Usando o comando :Lex para explorar a arvore de arquivos, podemos usar o comando D para excluir pastas vazias ou arquivos
+" também é possível usar o comando % para criar arquivos e d para criar pastas.
