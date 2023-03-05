@@ -9,6 +9,7 @@ This is a repository made for configuring the vim editor with exclusive use for 
 
 4-) Create the .tern-projetc file in your home and put this information in it:
 
+```json
 {
   "libs": [
     "browser",
@@ -23,3 +24,6 @@ This is a repository made for configuring the vim editor with exclusive use for 
   }
 }
 
+```
+
+![foto](vim.PNG)
